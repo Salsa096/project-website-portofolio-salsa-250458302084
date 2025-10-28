@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="bg-amber-200">kotak 1 (block)</div>
+    <div class="bg-amber-500">kotak 2 (block)</div>
+
+    <br />
+
+    <span class="bg-cyan-500 inline">kotak 1 (inline)</span>
+    <span class="bg-cyan-300 inline">kotak 2 (inline)</span>
+
+    <br /><br />
+
+    <span class="bg-fuchsia-300 inline-block w-24 h-12">kotak 1</span>
+    <span class="bg-fuchsia-400 inline-block w-24 h-12">kotak 2</span>
+
+    <br /><br />
+
+    <!-- temenan dengan 
+        justify = atur arah horizontal
+     , gap = atur jarak antar item
+     , items = atur arah vertikal -->
+    <div class="flex gap-2 bg-amber-100 p-2">
+      <div class="bg-amber-600 w-16 h-16">A</div>
+      <div class="bg-amber-400 w-16 h-16">B</div>
+      <div class="bg-amber-300 w-16 h-16">C</div>
+    </div>
+  </body>
+</html>

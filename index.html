@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" href="teacher.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .font-lucu {
+      font-family: "Libertinus Serif", serif;
+    }
+
+    .color-aca {
+      color: #FF90BB;
+    }
+  </style>
+  <body>
+    <nav
+      class="sticky top-0 z-50 bg-[#FF90BB]/30 backdrop-blur-2xl border-b-[#F8F8E1]"
+      aria-label="Primary"
+    >
+      <div class="max-w- px-4 sm:px-6 lg:px-8">
+        <!-- untuk menuu laptop -->
+        <div class="flex items-center justify-between h-16">
+          <!-- felx biar flexsoble
+                 uppercase biar cupslok
+                 tracking wider biar ada jarak di nama
+                 font bold biar hurufnya jdi tebal 
+                 justify alur arah horizontal-->
+          <a
+            href="#"
+            class="flex items-center text-pink-600 text-xl font-salsa uppercase tracking-wider font-bold"
+            >Salsa</a
+          >
+          <button
+            id="hamburger"
+            class="md:hidden p-2 mt-5 rounded hover:bg-[#F8F8E1] focus:outline-none focus:ring-2 focus:ring-orange-500"
+            aria-expanded="false"
+            aria-controls="main-menu"
+            aria-label="Toggle menu"
+          >
+            <svg
+              id="icon-open"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            <svg
+              id="icon-close"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+                   
+          </button>
+          <!-- flex biar dia flexsible
+                   flex col,biar dia kebawah 
+                   flex row biar kesamping
+                    -->
+          <div
+            id="main-menu"
+            class="hidden md:flex md:items-center md:gap-2 justify-between"
+          >
+            <div
+              class="flex flex-col md:flex-row md:items-center md:gap-2 text-right me:text-left"
+            >
+              <a
+                href="#AboutMe"
+                class="px-3 py-2 text-[#FF90BB] hover:text-[#F8F8E1] uppercase font-salsa font-bold"
+                >About Me</a
+              >
+              <a
+                href="#WhatIDo"
+                class="px-3 py-2 text-[#FF90BB] hover:text-[#F8F8E1] uppercase font-salsa font-bold"
+                >What I Do</a
+              >
+              <a
+                href="#Portofolio"
+                class="px-3 py-2 text-[#FF90BB] hover:text-[#F8F8E1] uppercase font-salsa font-bold"
+                >Portofolio</a
+              >
+              <a
+                href="#MySkill"
+                class="px-3 py-2 text-[#FF90BB] hover:text-[#F8F8E1] uppercase font-salsa font-bold"
+                >Skills</a
+              >
+              <a
+                href="#MyBlog"
+                class="px-3 py-2 text-[#FF90BB] hover:text-[#F8F8E1] uppercase font-salsa font-bold"
+                >Blog</a
+              >
+              <a
+                href="#ContactMe"
+                class="bg-[#FFC1DA] hover:bg-[#F8F8E1] rounded-xl px-4 py-2 font-salsa font-bold text-shadow-gray-600 justify-center"
+                >Contact Me</a
+              >
+            </div>
+          </div>
+          <!-- manu untuk hp -->
+          <div
+            id="mobile-panel"
+            class="md:hidden hidden border-t border-[#FF90BB] py-2"
+          >
+            <a
+              href="#AboutMe"
+              class="block px-3 py-2 text-shadow-purple-200 hover:text-fuchsia-300 uppercase font-salsa"
+              >About Me</a
+            >
+            <a
+              href="#"
+              class="block px-3 py-2 text-shadow-purple-200 hover:text-fuchsia-300 uppercase font-salsa"
+              >What I Do</a
+            >
+            <a
+              href="#"
+              class="block px-3 py-2 text-shadow-purple-200 hover:text-fuchsia-300 uppercase font-salsa"
+              >Portofolio</a
+            >
+            <a
+              href="#"
+              class="block px-3 py-2 text-shadow-purple-200 hover:text-fuchsia-300 uppercase font-salsa"
+              >Skiils</a
+            >
+            <a
+              href="#"
+              class="block px-3 py-2 text-shadow-purple-200 hover:text-fuchsia-300 uppercase font-salsa"
+              >Blog</a
+            >
+            <a
+              href="#"
+              class="block bg-fuchsia-300 hover:bg-fuchsia-400 rounded-xl px-4 py-2 font-salsa font-bold text-shadow-purple-200 justify-center items-center"
+              >Contact Me</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section id="AboutMe" class="bg-[#FFEDF3]">
+      <div
+        class="max-w-8xl mx-3 px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-2 gap-2 items-center"
+      >
+        <!-- order-2 biar dia ad jarak dan akan pindah jika dikasi kalimat
+          untuk urutan -->
+        <div
+          class="order-2 lg:order-2 ring-6 ring-[#FFC1DA] rounded-2xl shadow-2xl overflow-hidden"
+        >
+          <img src="poto saya.jpg" alt=""  />
+        </div>
+
+        <div class="order-1 lg:order-1">
+          <h1 class="font-lucu text-5xl font-bold leading-tight text-[#FFC1DA]">
+            Hello, I'm <span class="color-aca">Salsa</span>
+          </h1>
+          <h2 class="font-lucu text-2xl font-semibold text-[#FFC1DA] mt-4">
+            Web / Mobile Diveloper
+          </h2>
+          <p class="font-extralight text-[#FFC1DA] mt-5">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. standard dummy text ever since the 1500s, when an unknown
+            printer took a galley of type and scrambled
+          </p>
+
+          <!-- kotak kcil -->
+          <div class="mt-6 flex flex-wrap items-center gap-4">
+            <a
+              href=""
+              class="inline-flex items-center justify-center rounded-2xl bg-[#FF90BB] hover:bg-[#FFC1DA] text-white px-4 py-3"
+            >
+              <i class="fa-brands fa-apple"></i>
+            </a>
+            <a
+              href=""
+              class="inline-flex items-center justify-center rounded-2xl bg-[#FF90BB] hover:bg-[#FFC1DA] text-white px-4 py-3"
+            >
+              <i class="fa-brands fa-figma"></i>
+            </a>
+            <a
+              href=""
+              class="inline-flex items-center justify-center rounded-2xl bg-[#FF90BB] hover:bg-[#FFC1DA] text-white px-4 py-3"
+            >
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a
+              href=""
+              class="inline-flex items-center justify-center rounded-2xl bg-[#FF90BB] hover:bg-[#FFC1DA] text-white px-4 py-3"
+            >
+             <i class="fa-brands fa-docker"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- what i do -->
+     <section id="WhatIDo" class="bg-[#FFEDF3]">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 py-20 border-t border-[#FF90BB]">
+            <div class="text-center mb-12">
+                <!-- underline untuk garis bawah 
+                 decoration untuk warnai yang bagian underline-->
+                <h2 class="text-3xl font-bold font-lucu text-[#FF90BB] underline underline-offset-8 decoration-[#FFC1DA] decoration-4 tracking-wider">What I Do</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="rounded-xl bg-[#FFEAEA]-800/70 shadow-2xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 grid rounded-full bg-[#FF90BB] text-white place-items-center">
+                            <i class="fa-solid fa-computer"></i>
+                        </div >
+                        <h3 class="text-[#FF90BB] font-lucu font-bold text-lg tracking-wider ">Web Design</h3>
+
+                    </div>
+                    <div class="text-[#FF90BB]">
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
+                    </div>
+
+                </div>
+                <div class="rounded-xl bg-[#FFEAEA]-800/70 shadow-2xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 grid rounded-full bg-[#FF90BB] text-white place-items-center">
+                            <i class="fa-brands fa-linkedin"></i></i>
+                        </div>
+                        <h3 class="text-[#FF90BB] font-lucu font-bold text-lg tracking-wider ">App Design</h3>
+
+                    </div>
+                    <div class="text-[#FF90BB]">
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
+                    </div>
+
+                </div>
+                <div class="rounded-xl bg-[#FFEAEA]-800/70 shadow-2xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 grid rounded-full bg-[#FF90BB] text-white place-items-center">
+                            <i class="fa-brands fa-apple"></i></i>
+                        </div>
+                        <h3 class="text-[#FF90BB] font-lucu font-bold text-lg tracking-wider ">Branding</h3>
+
+                    </div>
+                    <div class="text-[#FF90BB]">
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+     </section>
+
+     <!-- portofolio -->
+
+     <section id="Portofolio" class="bg-[#FFEDF3]">
+        <div class="">
+           <div class="text-center mb-12">
+                <!-- underline untuk garis bawah 
+                 decoration untuk warnai yang bagian underline-->
+                <h2 class="text-3xl font-bold font-lucu text-[#FF90BB] underline underline-offset-8 decoration-[#FFC1DA] decoration-4 tracking-wider">Portofolio</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              <!-- card -->
+                <div class="bg-[#FFC1DA] rounded-2xl shadow-2xl ring-1 ring-[#FF90BB] overflow-hidden">
+                  <a href="https://youtu.be/zXVLqRECUS8?si=wqz-Y-c6fznE0Voy"><img src="poto.aku.jpg" class="w-full h-40 object-cover" alt="">
+                    <div class="p-6">
+                        <h2 class=" font-lucu text-2xl text-center text-[#F8F8E1]">Website With React JS</h2>
+                        <p class="teks-warna font-aca text-sm font-extralight mt-3 text-center text-white">Membuat website menggunakan React Js</p>
+                    </div></a>                                
+                 </div>
+                <div class="bg-[#FFC1DA] rounded-2xl shadow-2xl ring-1 ring-[#FF90BB] overflow-hidden">
+                    <img src="image.png" class="w-full h-40 object-cover" alt="">
+                    <div class="p-6">
+                        <h2 class=" font-lucu text-2xl text-center text-[#F8F8E1]">Website With React JS</h2>
+                        <p class="teks-warna font-aca text-sm font-extralight mt-3 text-center text-white">Membuat website menggunakan React Js</p>
+                    </div>
+
+                    
+                 </div>
+                <div class="bg-[#FFC1DA] rounded-2xl shadow-2xl ring-1 ring-[#FF90BB] overflow-hidden">
+                    <img src="download.jpeg" class="w-full h-40 object-cover " alt="">
+                    <div class="p-6">
+                        <h2 class=" font-lucu text-2xl text-center text-[#F8F8E1]">Website With React JS</h2>
+                        <p class="teks-warna font-aca text-sm font-extralight mt-3 text-center text-white">Membuat website menggunakan React Js</p>
+                    </div>
+                   
+                 </div>
+            </div>
+
+        </div>
+     </section>
+
+     <!-- my skill -->
+      <section id="MySkill" class="bg-[#FFEDF3]">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 py-20 border-t border-[#FF90BB]">
+            <div class="text-center mb-12">
+                <!-- underline untuk garis bawah 
+                 decoration untuk warnai yang bagian underline-->
+                <h2 class="text-3xl font-bold font-lucu text-[#FF90BB] underline underline-offset-8 decoration-[#FFC1DA] decoration-4 tracking-wider">My Skill</h2>
+            </div>
+
+          
+              <div class="font-lucu">
+                <h1 class="text-2xl font-extrabold text-[#FF90BB] ">Web Developer</h1>
+                <p class="text-[#FF90BB] pt-3  " >Saya memiliki skill seperti berikut</p>
+               </div>
+
+
+                 <div class="grid md:grid-cols-4 flex-wrap gap-6 mt-6">
+                <div class="rounded-xl shadow-2xl p-4 bg-[#FF90BB] hover:border-2 hover:border-[#FFEDF3]">
+                  <div class="flex justify-center">
+                      <img src="gambar.Ai.jpg" class="w-auto h-14 object-center"></img>       
+                  </div>
+                        </div>
+                
+                <div class="rounded-xl shadow-2xl p-4 bg-[#FF90BB] hover:border-2 hover:border-[#FFEDF3]">
+                  <div class="flex justify-center">
+                      <img src="https://i.pinimg.com/1200x/c6/cb/46/c6cb46e898757fd90857826455e3785f.jpg" class="w-auto h-14 object-center"></img>       
+                  </div>
+                        </div>
+                
+                <div class="rounded-xl shadow-2xl p-4 bg-[#FF90BB] hover:border-2 hover:border-[#FFEDF3]">
+                  <div class="flex justify-center">
+                      <img src="logo5.png" class="w-auto h-14 object-center"></img>       
+                  </div>
+                        </div>
+                
+                <div class="rounded-xl shadow-2xl p-4 bg-[#FF90BB] hover:border-2 hover:border-[#FFEDF3]">
+                  <div class="flex justify-center">
+                      <img src="https://i.pinimg.com/1200x/69/e2/b3/69e2b3be6001c33141a95557a5f2cbcd.jpg" class="w-auto h-14 object-center"></img>       
+                  </div>
+                        </div>
+                
+                <div class="rounded-xl shadow-2xl p-4 bg-[#FF90BB] hover:border-2 hover:border-[#FFEDF3]">
+                  <div class="flex justify-center">
+                      <img src="https://i.pinimg.com/1200x/b6/36/8f/b6368f6c13249e2fdb02c67982860f08.jpg" class="w-auto h-14 object-center"></img>       
+                  </div>
+                        </div>
+                
+                <div class="rounded-xl shadow-2xl p-4 bg-[#FF90BB] hover:border-2 hover:border-[#FFEDF3]">
+                  <div class="flex justify-center">
+                      <img src="berlian.logo1.png" class="w-auto h-14 object-center"></img>       
+                  </div>
+                        </div>
+                
+                <div class="rounded-xl shadow-2xl p-4 bg-[#FF90BB] hover:border-2 hover:border-[#FFEDF3]">
+                  <div class="flex justify-center">
+                      <img src="berlian.logo.png" class="w-auto h-14 object-center"></img>       
+                  </div>
+                        </div>
+                
+                <div class="rounded-xl shadow-2xl p-4 bg-[#FF90BB] hover:border-2 hover:border-[#FFEDF3]">
+                  <div class="flex justify-center">
+                      <img src="logo4.png" class="w-auto h-14 object-center"></img>       
+                  </div>
+                        </div>
+            </div>
+        </div>
+     </section>
+
+     <!-- My Blog -->
+      <section id="MyBlog" class="bg-[#FFEDF3]">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 py-20 border-t border-[#FF90BB]">
+            <div class="text-center mb-12">
+                <!-- underline untuk garis bawah 
+                 decoration untuk warnai yang bagian underline-->
+                <h2 class="text-3xl font-bold font-lucu text-[#FF90BB] underline underline-offset-8 decoration-[#FFC1DA] decoration-4 tracking-wider">MyBlog</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div class="rounded-xl bg-[#FFEAEA]-800/70 shadow-2xl p-6 transition">
+                    <div class="flex justify-center text[#FF90BB] text-sm font-semibold mb-4 grid-rows-2">
+                        <div class="mr-4 text-center mt-3">
+                      <p class="uppercase mb-1.5 text-[#FF90BB]">Aug</p>
+                      <div class="border justify-center flex text-[#FF90BB]"></div>
+                      <p class="text-2xl font-bold text-[#FF90BB]">24</p>
+                      </div>
+                      <div class="mt-2">
+                        <span class="text-pink-600">Jane Doe</span>
+                        <h3 class="text-xl font-bold mb-2 text-[#FF90BB]">Review Jasa Website</h3>
+                        <p class="text-[#FF90BB] mb-4 ">Jasanya bagus,good job dan cepat</p>
+                        <a href="#" class="text-pink-600 font-medium hover:underline">Read More</a>
+
+                      </div>
+                    </div>
+                    
+                </div>
+                <div class="rounded-xl bg-[#FFEAEA]-800/70 shadow-2xl p-6 transition">
+                    <div class="flex justify-center text[#FF90BB] text-sm font-semibold mb-4 grid-rows-2">
+                        <div class="mr-4 text-center mt-3">
+                      <p class="uppercase mb-1.5 text-[#FF90BB]">Aug</p>
+                      <div class="border justify-center flex text-[#FF90BB]"></div>
+                      <p class="text-2xl font-bold text-[#FF90BB]">24</p>
+                      </div>
+                      <div class="mt-2">
+                        <span class="text-pink-600">Jane Doe</span>
+                        <h3 class="text-xl font-bold mb-2 text-[#FF90BB]">Review Jasa Website</h3>
+                        <p class="text-[#FF90BB] mb-4 ">Jasanya bagus,good job dan cepat</p>
+                        <a href="#" class="text-pink-600 font-medium hover:underline">Read More</a>
+
+                      </div>
+                    </div>
+                    
+                </div>
+                <div class="rounded-xl bg-[#FFEAEA]-800/70 shadow-2xl p-6 transition">
+                    <div class="flex justify-center text[#FF90BB] text-sm font-semibold mb-4 grid-rows-2">
+                        <div class="mr-4 text-center mt-3">
+                      <p class="uppercase mb-1.5 text-[#FF90BB]">Aug</p>
+                      <div class="border justify-center flex text-[#FF90BB]"></div>
+                      <p class="text-2xl font-bold text-[#FF90BB]">24</p>
+                      </div>
+                      <div class="mt-2">
+                        <span class="text-pink-600">Jane Doe</span>
+                        <h3 class="text-xl font-bold mb-2 text-[#FF90BB]">Review Jasa Website</h3>
+                        <p class="text-[#FF90BB] mb-4 ">Jasanya bagus,good job dan cepat</p>
+                        <a href="#MyBlog" class="text-pink-600 font-medium hover:underline">Read More</a>
+                      </div>
+                    </div>                    
+                </div>                              
+            </div>
+        </div>
+     </section>
+
+     <!-- contact me -->
+     <section id="ContactMe" class="bg-[#FFEDF3]">
+      <div class="max-w-7xl mx-auto px-4 md:px-8 py-20 border-t border-[#FF90BB]">
+            <div class="text-center mb-12">
+                <!-- underline untuk garis bawah 
+                 decoration untuk warnai yang bagian underline-->
+                <h2 class="text-3xl font-bold font-lucu text-[#FF90BB] underline underline-offset-8 decoration-[#FFC1DA] decoration-4 tracking-wider">Contact Me</h2>
+                <p class="font-extralight pt-4 text-[#FF90BB]">HUBUNGI KAMI JIKA INGIN BERKERJA SAMA</p>
+            </div>
+
+            <div class="bg-white shadow-2xl rounded-2xl p-8 font-lucu">
+                    <form action="">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="grid">
+                                <label class="text-[#FF90BB]">NAME</label>
+                                <!-- placeholder,untuk tulisan bayang byang dalam input -->
+                                <input type="text" class=" w-full px-4 py-2 ring-1 ring-[#FF90BB] mt-4" placeholder="">
+                            </div>                           
+
+                        <div class="grid" >
+                            <label class="text-[#FF90BB]">EMAIL</label>
+                            <input type="email" class=" w-full px-4 py-2 ring-1 ring-[#FF90BB] mt-4" placeholder="">
+                        </div>
+                        </div>
+                        <br>
+
+                       <div class=" mb-5" >
+                            <label class="mb-5 text-[#FF90BB]">MASSAGE</label>
+                            <input type="massage" class=" w-full px-16 py-12 ring-1 ring-[#FF90BB] "placeholder="">
+                        </div>
+                        </div>
+
+                        <div class=" mt-4 items-start">
+                            <button class="bg-[#FF90BB] font-lucu font-semibold rounded-2xl font-aca px-4 py-2 items-start">Send Message</button>
+                        </div>
+                    </form>
+                  </div>
+            </div>
+     </section>
+
+     <!-- footer -->
+      <footer class="bg-[#FFEDF3] text-[#F6F1E9] font-semibold font-lucu">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-row justify-between">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.038622948607!2d103.16074761667173!3d-0.3107060296633021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e284017b5202f4b%3A0x63d42d78c915196!2sStadion%20Beringin%20Tembilahan!5e0!3m2!1sid!2sid!4v1756976487805!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>          
+            <div class="flex gap-6" >
+            <a href="#" class="text-pink-600 hover:text-[#FF90BB] mt-7 pl-5">Jl. Sungai Beringin, Sungai Beringin, Kec. Tembilahan, Kabupaten Indragiri Hilir, Riau 29281</a>
+           
+           
+
+        </div>
+
+        </div>
+        <p class="text-pink-600 text-center">&copy; 2025 Portofolio Salsa,Made with Love</p>
+        
+
+      </footer>
+      
+
+
+    
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+      AOS.init({
+        duration: reduceMotion ? 0 : 600,
+        once: true,
+      });
+
+      const btn = document.getElementById("hamburger");
+      const iconOpen = document.getElementById("icon-open");
+      const iconClose = document.getElementById("icon-close");
+      const menu = document.getElementById("main-menu");
+      const panel = document.getElementById("mobile-panel");
+
+      btn?.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+        iconOpen.classList.toggle("hidden");
+        iconClose.classList.toggle("hidden");
+        panel.classList.toggle("hidden");
+      });
+
+      panel?.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => {
+          btn.setAttribute("aria-expanded", "false");
+          iconOpen.classList.remove("hidden");
+          iconClose.classList.add("hidden");
+          panel.classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
